@@ -3,6 +3,14 @@ public class Floyd {
     public static int getINF() {
         return INF;
     }
+    public boolean hasNegativeCycles(int[][] dist) {
+        for (int i = 0; i < dist.length; i++) {
+            if (dist[i][i] < 0) {
+                return true;
+            }
+        }
+        return false;
+    }
     public void run(int[][] graph) {
         int V = graph.length;
         int[][] dist = new int[V][V];
@@ -24,6 +32,9 @@ public class Floyd {
                     }
                 }
             }
+        }
+        if (hasNegativeCycles(dist)) {
+            System.out.println("Обнаружены отрицательные циклы!");
         }
         printSolution(dist);
     }
