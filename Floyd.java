@@ -7,9 +7,7 @@ public class Floyd {
         int V = graph.length;
         int[][] dist = new int[V][V];
         for (int i = 0; i < V; i++) {
-            for (int j = 0; j < V; j++) {
-                dist[i][j] = graph[i][j];
-            }
+            System.arraycopy(graph[i], 0, dist[i], 0, V);
         }
         System.out.println("Исходный граф: ");
         foreach(dist);
