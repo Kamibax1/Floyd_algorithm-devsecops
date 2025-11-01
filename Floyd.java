@@ -37,17 +37,8 @@ public class Floyd {
             System.out.println();
         }
     }
-    public void printSolution(int[][] dist, int V) {
+    public void printSolution(int[][] dist) {
         System.out.println("Кратчайшие расстояния между всеми парами вершин:");
-        for (int i = 0; i < V; i++) {
-            for (int j = 0; j < V; j++) {
-                if (dist[i][j] == INF) {
-                    System.out.print("INF ");
-                } else {
-                    System.out.print(dist[i][j] + "   ");
-                }
-            }
-            System.out.println();
-        }
+        foreach(dist);
     }
 }
