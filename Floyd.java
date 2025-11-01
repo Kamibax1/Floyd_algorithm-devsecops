@@ -13,12 +13,14 @@ public class Floyd {
         foreach(dist);
         for (int k = 0; k < V; k++) {
             for (int i = 0; i < V; i++) {
+                if (dist[i][k] == INF) continue;
                 for (int j = 0; j < V; j++) {
-                    if (dist[i][k] != INF && dist[k][j] != INF &&
-                            dist[i][k] + dist[k][j] < dist[i][j]) {
-                        dist[i][j] = dist[i][k] + dist[k][j];
+                    if (dist[k][j] == INF) continue;
+                    int newDist = dist[i][k] + dist[k][j];
+                    if (newDist < dist[i][j]) {
+                        dist[i][j] = newDist;
                         System.out.printf("  %d\n", k+1);
-                        System.out.printf("%d - %d = %d\n", i+1, j+1, dist[i][k] + dist[k][j]);
+                        System.out.printf("%d - %d = %d\n", i+1, j+1, newDist);
                     }
                 }
             }
