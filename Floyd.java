@@ -23,7 +23,7 @@ public class Floyd {
                 }
             }
         }
-        printSolution(dist, V);
+        printSolution(dist);
     }
     public void foreach(int[][] dist){
         for(int[] i : dist){
